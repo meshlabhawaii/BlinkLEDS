@@ -37,3 +37,5 @@ while True:
 
 
 GPIO.cleanup(4)
+GPIO.cleanup(5)
+GPIO.cleanup(6)

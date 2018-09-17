@@ -8,21 +8,18 @@ GPIO.setup(6, GPIO.OUT)
 for i in range (0,9001):
     interval=(i%20)/80
     
-    GPIO.output(4, GPIO.LOW)
     GPIO.output(5, GPIO.LOW)
     GPIO.output(6, GPIO.HIGH)
     
     time.sleep(interval)
     
     GPIO.output(4, GPIO.HIGH)
-    GPIO.output(5, GPIO.LOW)
     GPIO.output(6, GPIO.LOW)
     
     time.sleep(interval)
     
     GPIO.output(4, GPIO.LOW)
     GPIO.output(5, GPIO.HIGH)
-    GPIO.output(6, GPIO.LOW)
     
     time.sleep(interval)
 

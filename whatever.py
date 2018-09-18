@@ -21,12 +21,3 @@ while True:
     GPIO.output(pin2, GPIO.LOW)
     time.sleep(4*interval)
 
-
-
-
-
-
-GPIO.cleanup(4)
-
-
-

@@ -1,35 +1,23 @@
-import time 
+import time
 import RPi.GPIO as GPIO
-from random import randint
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(4,GPIO.OUT)
-GPIO.setup(6,GPIO.OUT)
-GPIO.setup(5,GPIO.OUT)
 
+GPIO.setup(4, GPIO.OUT)
+GPIO.setup(10, GPIO.OUT)
 
-pin=1
+pin1 = 4
+pin2 = 10
+interval = 0.1
 
 while True:
-    for i in range (100):
-        interval=i/100
-        GPIO.output(4,GPIO.HIGH)
-        GPIO.output(5,GPIO.LOW)
-        GPIO.output(6,GPIO.LOW)
-        time.sleep(interval)
-        GPIO.output(4,GPIO.LOW)
-        GPIO.output(5,GPIO.HIGH)
-        GPIO.output(6,GPIO.LOW)
-        time.sleep(interval)
-        GPIO.output(4,GPIO.LOW)
-        GPIO.output(5,GPIO.LOW)
-        GPIO.output(6,GPIO.HIGH)
-        time.sleep(interval)
-    
-    
+    GPIO.output(pin1, GPIO.HIGH)
+    time.sleep(interval)
+    GPIO.output(pin2, GPIO.LOW)
+    time.sleep(4*interval)
 
+    GPIO.output(pin1, GPIO.HIGH)
+    time.sleep(interval)
+    GPIO.output(pin2, GPIO.LOW)
+    time.sleep(4*interval)
 
-
-
-
-GPIO.cleanup(4)
